@@ -1,11 +1,16 @@
-export default function RootLayout({
-  children,
-}: {
+import '@/app/ui/global.css';
+import { inter, rubikWetPaint } from '@/app/ui/fonts';
+
+type RootLayoutProps = {
   children: React.ReactNode;
-}) {
+};
+
+
+export default function RootLayout({children}: RootLayoutProps) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${inter.className} `}>{children}</body>
     </html>
   );
 }
+
