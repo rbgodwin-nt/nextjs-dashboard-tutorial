@@ -1,3 +1,5 @@
+'use client';
+
 import { CustomerField } from '@/app/lib/definitions';
 import Link from 'next/link';
 import {
@@ -7,8 +9,11 @@ import {
   UserCircleIcon,
 } from '@heroicons/react/24/outline';
 import { Button } from '@/app/ui/button';
+import CustomSelect from '@/app/ui/custom-select';
+import { useState } from 'react';
 
 export default function Form({ customers }: { customers: CustomerField[] }) {
+  const [customerId, setCustomerId] = useState('');
   return (
     <form>
       <div className="rounded-md bg-halloween-black-800 p-4 md:p-6 border border-halloween-orange-600">
@@ -17,24 +22,14 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
           <label htmlFor="customer" className="mb-2 block text-sm font-medium text-halloween-orange-300">
             Choose customer
           </label>
-          <div className="relative">
-            <select
-              id="customer"
-              name="customerId"
-              className="peer block w-full cursor-pointer rounded-md border border-halloween-purple-600 bg-halloween-black-700 text-halloween-orange-200 py-2 pl-10 text-sm outline-2 placeholder:text-halloween-orange-400"
-              defaultValue=""
-            >
-              <option value="" disabled>
-                Select a customer
-              </option>
-              {customers.map((customer) => (
-                <option key={customer.id} value={customer.id}>
-                  {customer.name}
-                </option>
-              ))}
-            </select>
-            <UserCircleIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-halloween-orange-500" />
-          </div>
+          <CustomSelect
+            options={customers}
+            value={customerId}
+            onChange={setCustomerId}
+            placeholder="Select a customer"
+            name="customerId"
+            icon={UserCircleIcon}
+          />
         </div>
 
         {/* Invoice Amount */}
