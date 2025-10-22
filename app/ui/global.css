@@ -3,12 +3,80 @@
 @tailwind utilities;
 
 @layer base {
+  /* Smooth transitions for all color changes (including theme switches) */
+  *,
+  *::before,
+  *::after {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+
+  :root {
+    /* Light Theme (Default) */
+    --color-background: 255 255 255;
+    --color-surface: 249 250 251;
+    --color-surface-secondary: 243 244 246;
+    --color-primary: 37 99 235;
+    --color-primary-hover: 29 78 216;
+    --color-secondary: 147 51 234;
+    --color-secondary-hover: 126 34 206;
+    --color-accent: 59 130 246;
+    --color-accent-hover: 37 99 235;
+    --color-text-primary: 17 24 39;
+    --color-text-secondary: 107 114 128;
+    --color-text-muted: 156 163 175;
+    --color-border: 229 231 235;
+    --color-border-strong: 209 213 219;
+    --color-success: 34 197 94;
+    --color-success-bg: 220 252 231;
+    --color-warning: 234 179 8;
+    --color-warning-bg: 254 249 195;
+    --color-nav-bg: 255 255 255;
+    --color-nav-item: 249 250 251;
+    --color-nav-item-hover: 239 246 255;
+    --color-nav-item-active: 219 234 254;
+    --color-nav-text: 107 114 128;
+    --color-nav-text-active: 37 99 235;
+  }
+
+  [data-theme="halloween"] {
+    /* Halloween Theme */
+    --color-background: 13 13 13;
+    --color-surface: 26 26 26;
+    --color-surface-secondary: 45 45 45;
+    --color-primary: 247 127 0;
+    --color-primary-hover: 204 102 0;
+    --color-secondary: 123 31 162;
+    --color-secondary-hover: 106 27 154;
+    --color-accent: 255 149 0;
+    --color-accent-hover: 255 173 51;
+    --color-text-primary: 255 194 102;
+    --color-text-secondary: 255 173 51;
+    --color-text-muted: 255 149 0;
+    --color-border: 247 127 0;
+    --color-border-strong: 156 39 176;
+    --color-success: 0 150 136;
+    --color-success-bg: 74 20 140;
+    --color-warning: 156 39 176;
+    --color-warning-bg: 45 45 45;
+    --color-nav-bg: 13 13 13;
+    --color-nav-item: 31 31 31;
+    --color-nav-item-hover: 123 31 162;
+    --color-nav-item-active: 247 127 0;
+    --color-nav-text: 255 173 51;
+    --color-nav-text-active: 255 255 255;
+  }
+
   body {
-    @apply bg-halloween-black-900;
+    background-color: rgb(var(--color-background));
+    min-height: 100vh;
+  }
+
+  [data-theme="halloween"] body {
     background-image: 
       radial-gradient(circle at 20% 50%, rgba(156, 39, 176, 0.1) 0%, transparent 50%),
       radial-gradient(circle at 80% 80%, rgba(255, 149, 0, 0.08) 0%, transparent 50%);
-    min-height: 100vh;
   }
 }
 

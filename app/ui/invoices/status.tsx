@@ -7,21 +7,21 @@ export default function InvoiceStatus({ status }: { status: string }) {
       className={clsx(
         'inline-flex items-center rounded-full px-2 py-1 text-xs',
         {
-          'bg-halloween-purple-700 text-halloween-orange-200 border border-halloween-orange-600': status === 'pending',
-          'bg-halloween-green-700 text-white border border-halloween-green-500': status === 'paid',
+          'bg-warning-bg text-warning border border-warning': status === 'pending',
+          'bg-success-bg text-success border border-success': status === 'paid',
         },
       )}
     >
       {status === 'pending' ? (
         <>
           Pending
-          <ClockIcon className="ml-1 w-4 text-halloween-orange-400" />
+          <ClockIcon className="ml-1 w-4" />
         </>
       ) : null}
       {status === 'paid' ? (
         <>
           Paid
-          <CheckIcon className="ml-1 w-4 text-white" />
+          <CheckIcon className="ml-1 w-4" />
         </>
       ) : null}
     </span>

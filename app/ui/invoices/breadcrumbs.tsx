@@ -21,12 +21,12 @@ export default function Breadcrumbs({
             key={breadcrumb.href}
             aria-current={breadcrumb.active}
             className={clsx(
-              breadcrumb.active ? 'text-halloween-orange-300' : 'text-halloween-orange-500',
+              breadcrumb.active ? 'text-text-primary' : 'text-text-secondary',
             )}
           >
             <Link href={breadcrumb.href}>{breadcrumb.label}</Link>
             {index < breadcrumbs.length - 1 ? (
-              <span className="mx-3 inline-block text-halloween-orange-600">/</span>
+              <span className="mx-3 inline-block text-text-muted">/</span>
             ) : null}
           </li>
         ))}

@@ -10,40 +10,40 @@ import { Button } from './button';
 export default function LoginForm() {
   return (
     <form className="space-y-3">
-      <div className="flex-1 rounded-lg bg-halloween-black-800 px-6 pb-4 pt-8 border border-halloween-orange-600 shadow-lg">
-        <h1 className={`${lusitana.className} mb-3 text-2xl text-halloween-orange-300`}>
+      <div className="flex-1 rounded-lg bg-surface px-6 pb-4 pt-8 border border-border shadow-lg">
+        <h1 className={`${lusitana.className} mb-3 text-2xl text-text-primary`}>
           Please log in to continue.
         </h1>
         <div className="w-full">
           <div>
             <label
-              className="mb-3 mt-5 block text-xs font-medium text-halloween-orange-300"
+              className="mb-3 mt-5 block text-xs font-medium text-text-primary"
               htmlFor="email"
             >
               Email
             </label>
             <div className="relative">
               <input
-                className="peer block w-full rounded-md border border-halloween-purple-600 bg-halloween-black-700 text-halloween-orange-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-halloween-orange-400"
+                className="peer block w-full rounded-md border border-border bg-surface-secondary text-text-primary py-[9px] pl-10 text-sm outline-2 placeholder:text-text-muted"
                 id="email"
                 type="email"
                 name="email"
                 placeholder="Enter your email address"
                 required
               />
-              <AtSymbolIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-halloween-orange-500 peer-focus:text-halloween-orange-300" />
+              <AtSymbolIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-text-secondary peer-focus:text-text-primary" />
             </div>
           </div>
           <div className="mt-4">
             <label
-              className="mb-3 mt-5 block text-xs font-medium text-halloween-orange-300"
+              className="mb-3 mt-5 block text-xs font-medium text-text-primary"
               htmlFor="password"
             >
               Password
             </label>
             <div className="relative">
               <input
-                className="peer block w-full rounded-md border border-halloween-purple-600 bg-halloween-black-700 text-halloween-orange-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-halloween-orange-400"
+                className="peer block w-full rounded-md border border-border bg-surface-secondary text-text-primary py-[9px] pl-10 text-sm outline-2 placeholder:text-text-muted"
                 id="password"
                 type="password"
                 name="password"
@@ -51,7 +51,7 @@ export default function LoginForm() {
                 required
                 minLength={6}
               />
-              <KeyIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-halloween-orange-500 peer-focus:text-halloween-orange-300" />
+              <KeyIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-text-secondary peer-focus:text-text-primary" />
             </div>
           </div>
         </div>

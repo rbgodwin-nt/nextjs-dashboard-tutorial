@@ -22,10 +22,10 @@ export default function EditInvoiceForm({
   const [customerId, setCustomerId] = useState(invoice.customer_id);
   return (
     <form>
-      <div className="rounded-md bg-halloween-black-800 p-4 md:p-6 border border-halloween-orange-600">
+      <div className="rounded-md bg-surface p-4 md:p-6 border border-border">
         {/* Customer Name */}
         <div className="mb-4">
-          <label htmlFor="customer" className="mb-2 block text-sm font-medium text-halloween-orange-300">
+          <label htmlFor="customer" className="mb-2 block text-sm font-medium text-text-primary">
             Choose customer
           </label>
           <CustomSelect
@@ -40,7 +40,7 @@ export default function EditInvoiceForm({
 
         {/* Invoice Amount */}
         <div className="mb-4">
-          <label htmlFor="amount" className="mb-2 block text-sm font-medium text-halloween-orange-300">
+          <label htmlFor="amount" className="mb-2 block text-sm font-medium text-text-primary">
             Choose an amount
           </label>
           <div className="relative mt-2 rounded-md">
@@ -52,19 +52,19 @@ export default function EditInvoiceForm({
                 step="0.01"
                 defaultValue={invoice.amount}
                 placeholder="Enter USD amount"
-                className="peer block w-full rounded-md border border-halloween-purple-600 bg-halloween-black-700 text-halloween-orange-200 py-2 pl-10 text-sm outline-2 placeholder:text-halloween-orange-400"
+                className="peer block w-full rounded-md border border-border bg-surface-secondary text-text-primary py-2 pl-10 text-sm outline-2 placeholder:text-text-muted"
               />
-              <CurrencyDollarIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-halloween-orange-500 peer-focus:text-halloween-orange-300" />
+              <CurrencyDollarIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-text-secondary peer-focus:text-text-primary" />
             </div>
           </div>
         </div>
 
         {/* Invoice Status */}
         <fieldset>
-          <legend className="mb-2 block text-sm font-medium text-halloween-orange-300">
+          <legend className="mb-2 block text-sm font-medium text-text-primary">
             Set the invoice status
           </legend>
-          <div className="rounded-md border border-halloween-purple-600 bg-halloween-black-700 px-[14px] py-3">
+          <div className="rounded-md border border-border bg-surface-secondary px-[14px] py-3">
             <div className="flex gap-4">
               <div className="flex items-center">
                 <input
@@ -73,11 +73,11 @@ export default function EditInvoiceForm({
                   type="radio"
                   value="pending"
                   defaultChecked={invoice.status === 'pending'}
-                  className="h-4 w-4 cursor-pointer border-halloween-orange-600 bg-halloween-black-600 text-halloween-orange-600 focus:ring-2"
+                  className="h-4 w-4 cursor-pointer border-border bg-surface text-warning focus:ring-2"
                 />
                 <label
                   htmlFor="pending"
-                  className="ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-halloween-purple-700 px-3 py-1.5 text-xs font-medium text-halloween-orange-200"
+                  className="ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-warning-bg px-3 py-1.5 text-xs font-medium text-warning"
                 >
                   Pending <ClockIcon className="h-4 w-4" />
                 </label>
@@ -89,11 +89,11 @@ export default function EditInvoiceForm({
                   type="radio"
                   value="paid"
                   defaultChecked={invoice.status === 'paid'}
-                  className="h-4 w-4 cursor-pointer border-halloween-orange-600 bg-halloween-black-600 text-halloween-green-600 focus:ring-2"
+                  className="h-4 w-4 cursor-pointer border-border bg-surface text-success focus:ring-2"
                 />
                 <label
                   htmlFor="paid"
-                  className="ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-halloween-green-700 px-3 py-1.5 text-xs font-medium text-white"
+                  className="ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-success px-3 py-1.5 text-xs font-medium text-white"
                 >
                   Paid <CheckIcon className="h-4 w-4" />
                 </label>
@@ -105,7 +105,7 @@ export default function EditInvoiceForm({
       <div className="mt-6 flex justify-end gap-4">
         <Link
           href="/dashboard/invoices"
-          className="flex h-10 items-center rounded-lg bg-halloween-purple-700 px-4 text-sm font-medium text-halloween-orange-200 transition-colors hover:bg-halloween-purple-600"
+          className="flex h-10 items-center rounded-lg bg-surface-secondary px-4 text-sm font-medium text-text-primary transition-colors hover:bg-surface border border-border"
         >
           Cancel
         </Link>
